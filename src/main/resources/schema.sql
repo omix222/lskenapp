@@ -1,0 +1,1 @@
+CREATE table IF NOT EXISTS messages(messageId int primary key auto_increment, Type varchar(30), messageDetail varchar(30),fromUserId varchar(30),groupId varchar(30),postDate TIMESTAMP);

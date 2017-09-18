@@ -1,0 +1,1 @@
+INSERT INTO messages(messageId, type, messageDetail, fromUserId, groupId,postDate) VALUES(1, 'text','hello', 'u001','g001','2018-09-18 22:22:45');
