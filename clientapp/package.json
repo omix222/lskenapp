@@ -1,0 +1,40 @@
+{
+  "name": "workflow_sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "backbone": "^1.3.3",
+    "backbone.localstorage": "^2.0.0",
+    "backbone.marionette": "^3.3.1",
+    "backbone.validation": "^0.7.1",
+    "bootstrap": "^3.3.7",
+    "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
+    "eslint": "^4.2.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^3.2.1",
+    "jstify": "^0.14.0",
+    "moment": "^2.18.1",
+    "numbro": "^1.11.0",
+    "run-sequence": "^1.2.2",
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  }
+}
