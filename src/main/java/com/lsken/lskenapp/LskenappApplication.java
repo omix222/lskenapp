@@ -19,13 +19,7 @@ public class LskenappApplication implements CommandLineRunner{
 	MessageRepository messageRepository;
 	@Override
 	public void run(String... strings) throws Exception {
-		Message message = new Message();
-		message.setMessageId(2);
-		message.setGroupId("g001");
-		message.setFromUserId("u001");
-		message.setType("text");
-		message.setMessageDetail("hello hello");
-		message.setPostDate(new Date());
+		Message message = new Message(2,"text","hello hello","u001","g001",new Date());
 		Message created = messageRepository.save(message);
 		System.out.println(created);
 		messageRepository.findAll().forEach(System.out::println);

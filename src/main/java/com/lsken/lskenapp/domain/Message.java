@@ -19,6 +19,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Message {
 
+	public Message(Integer messageId, String type, String messageDetail, String fromUserId, String groupId,
+			Date postDate) {
+		super();
+		this.messageId = messageId;
+		this.type = type;
+		this.messageDetail = messageDetail;
+		this.fromUserId = fromUserId;
+		this.groupId = groupId;
+		this.postDate = postDate;
+	}
+	public Message(){
+	}
+
 	@Id
 	@GeneratedValue
 	@Column(name="messageId")
