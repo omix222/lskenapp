@@ -20,12 +20,14 @@ public class MessageRestController {
 	@GetMapping
 	List<Message> getMessages() {
 		List<Message> messages = messageService.findAll();
+		System.out.println("select size is "+messages.size());
 		return messages;
 	}
 
 	@GetMapping(path = "{id}")
 	Message getMessages(@PathVariable Integer id) {
 		Message message = messageService.findOne(id);
+		System.out.println("messageid is "+message);
 		return message;
 	}
 }

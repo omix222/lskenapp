@@ -1,0 +1,2 @@
+-- DROP table messages;
+CREATE table messages(message_id int primary key auto_increment, Type varchar(30), message_detail varchar(30),from_user_id varchar(30),group_id varchar(30),post_date TIMESTAMP);
