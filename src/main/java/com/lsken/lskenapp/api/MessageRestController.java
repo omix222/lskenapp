@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,13 +21,19 @@ public class MessageRestController {
 
 	@GetMapping
 	List<Message> getMessages() {
-		List<Message> messages = messageService.findAll();
+		List<Message> messages = messageService.findAllOrderByPostDate();
 		return messages;
 	}
 
 	@GetMapping(path = "{id}")
-	Message getMessages(@PathVariable Integer id) {
+	Message getMessage(@PathVariable Integer id) {
 		Message message = messageService.findOne(id);
 		return message;
+	}
+	
+	@PostMapping
+	Message postMessage(@RequestBody Message newMessage) {
+		Message createdMessage = messageService.create(newMessage);
+		return createdMessage;
 	}
 }

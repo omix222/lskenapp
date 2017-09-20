@@ -21,8 +21,8 @@ public class LskenappApplication implements CommandLineRunner{
 	public void run(String... strings) throws Exception {
 		Message message = new Message(2,"text","hello hello","u001","g001",new Date());
 		Message created = messageRepository.save(message);
-		System.out.println(created);
-		messageRepository.findAll().forEach(System.out::println);
+		//System.out.println(created);
+		//messageRepository.findAll().forEach(System.out::println);
 	}
 
 	public static void main(String[] args) {

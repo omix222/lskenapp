@@ -3,6 +3,8 @@ package com.lsken.lskenapp.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +19,10 @@ public class MessageService {
 
 	public List<Message> findAll() {
 		return messageRepository.findAll();
+	}
+	
+	public List<Message> findAllOrderByPostDate() {
+		return messageRepository.findAll(new Sort(Direction.DESC,"postDate"));
 	}
 
 	public Message findOne(int mesageId) {
