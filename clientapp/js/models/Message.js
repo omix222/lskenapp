@@ -2,11 +2,14 @@ var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
     defaults: {
-        content: '',
-        type: '',
-        username: '',
+     //   messageDetail: '',
+     content:'',  
+     type: '',
+        //fromUserId: '',
+        username:'',
         groupId: '',
         stamp: '',
+        postDate:'',
     },
     isText: function() {
         return this.get('type') === 'text';

@@ -1,0 +1,2 @@
+# 「node_modules」フォルダを除外
+node_modules/
