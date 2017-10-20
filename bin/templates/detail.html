@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>メッセージ送受信画面</title>
+<script
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBuF7sKBPtJawa0sNDuil2ysI8vN5eXjnc"
+	type="text/javascript" charset="UTF-8"></script>
+</head>
+
+<body onload="init()">
+<div style="width: 50%;border:#d0d0d0 ridge 5px;background-color : #000080;">
+	<form name="form">
+		<select name="pref"
+			onChange="setMenuItem(0,this[this.selectedIndex].value)">
+			<option value="0" selected="selected">-----</option>
+			<th:block th:each="item : ${prefList}" th:object="${item}">
+				<option th:value="*{prefCode}" th:text="*{prefName}">サンプル1</option>
+			</th:block>
+		</select><font color="#ffffff">>></font><select name="s0"
+			onChange="setMenuItem(1,this[this.selectedIndex].value)">
+			<option selected="selected">----</option>
+		</select><font color="#ffffff">>></font><select name="s1"
+			onChange="setMenuItem(2,this[this.selectedIndex].value)">
+			<option selected="selected">----</option>
+		</select><br />
+		<font color="#ffffff">※都道府県から路線/駅を選択してください</font>
+	</form>
+	</div>
+	
+	<div id="map" style="width: 50%; height: 400px;border:#d0d0d0 ridge 5px;"></div>
+</body>
+</html>

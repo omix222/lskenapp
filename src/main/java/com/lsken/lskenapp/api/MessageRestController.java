@@ -30,7 +30,12 @@ public class MessageRestController {
 		Message message = messageService.findOne(id);
 		return message;
 	}
-	
+	/**
+	 * 受け取ったメッセージをDBへ登録。正しく登録できたらその内容をDBから取得し、返却する
+	 * 引数はMesageクラスとなっているが、メッセージIDはこれを使わず、アプリケーション側で自動採番する。
+	 * @param newMessage
+	 * @return
+	 */
 	@PostMapping
 	Message postMessage(@RequestBody Message newMessage) {
 		Message createdMessage = messageService.create(newMessage);

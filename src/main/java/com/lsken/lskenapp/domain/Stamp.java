@@ -15,6 +15,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Stamp {
+	
+	public Stamp(String fileName, String data) {
+		super();
+		this.fileName = fileName;
+		this.data = data;
+	}
+	
+	public Stamp(){
+		super();
+	}
+	
 	@Id
 	private String fileName;
 

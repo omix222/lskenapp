@@ -16,6 +16,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class User {
 	
+	public User(String userId, String userName) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+	}
+	public User(){
+		super();
+	}
 	@Id
 	private String userId;
 

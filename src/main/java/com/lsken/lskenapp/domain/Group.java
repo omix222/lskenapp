@@ -16,6 +16,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Group {
 	
+	public Group(String groupId, String groupName) {
+		super();
+		this.groupId = groupId;
+		this.groupName = groupName;
+	}
+	
+	public Group() {
+		super();
+	}
+
 	@Id
 	private String groupId;
 
