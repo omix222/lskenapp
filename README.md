@@ -38,6 +38,9 @@ gitクライアントをインストールしておくこと
 
 
 ## サンプルリクエスト、レスポンス 
+
+### webAPI 
+
 http://localhost:8080/messages/1
 
 {
@@ -49,7 +52,13 @@ http://localhost:8080/messages/1
 "postDate": 1508364160171
 }
 
-H2Databaseアクセス方法
+### ブラウザ向け
+
+http://localhost:8080/messagelist
+
+メッセージ一覧が表示されればOK
+
+## H2Databaseアクセス方法 
 
 http://localhost:8080/h2-console/login.jsp
 
