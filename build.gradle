@@ -1,13 +1,10 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.7.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
 }
 
 apply plugin: 'java'
@@ -16,7 +13,9 @@ apply plugin: 'org.springframework.boot'
 
 group = 'com.lsken'
 version = '0.0.1-SNAPSHOT'
+
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -24,10 +23,15 @@ repositories {
 
 
 dependencies {
+	//compile('org.springframework.boot:spring-boot-starter-web')
+	// for Thymeleaf
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    // nekohtmlを追加
+    compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	
 	compile("org.lazyluke:log4jdbc-remix:0.2.7")
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
