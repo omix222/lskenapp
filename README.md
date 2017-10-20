@@ -4,7 +4,7 @@
 
 ## 導入手順 
 
-ローカル端末にSTS(Spring Too Suite)をインストールする。
+ローカル端末にSTS(Spring Tool Suite)をインストールする。
 
 ・参考手順
 https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
@@ -58,7 +58,7 @@ http://localhost:8080/messagelist
 
 メッセージ一覧が表示されればOK
 
-## H2Databaseアクセス方法 
+## H2Databaseコンソールアクセス方法 
 
 http://localhost:8080/h2-console/login.jsp
 
