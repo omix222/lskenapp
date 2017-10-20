@@ -19,7 +19,7 @@ import com.lsken.lskenapp.repository.StampRepository;
 import com.lsken.lskenapp.repository.UserRepository;
 
 @SpringBootApplication
-@Controller
+@RestController
 public class LskenappApplication implements CommandLineRunner{
 	@Autowired
 	MessageRepository messageRepository;

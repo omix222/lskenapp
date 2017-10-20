@@ -6,6 +6,16 @@
 
 ローカル端末にSTS(Spring Too Suite)をインストールする。
 
+・参考手順
+https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
+
+
+STSにEclipseプラグインである、Buildshipをイントールする。
+　Eclipse Marketplaceにあります。
+　help→Eclipse Marketplace
+　「buildship」で検索
+　installをクリック。
+
 
 
 ## サンプルリクエスト、レスポンス 
