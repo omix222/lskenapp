@@ -1,11 +1,13 @@
 package com.lsken.lskenapp.domain;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -42,7 +44,7 @@ public class Message {
 	@Column(nullable = false)
 	private String groupId;
 	
-	@Column(nullable = false)
+	@Column
 	private Date postDate;
 
 	public Integer getMessageId() {
@@ -92,5 +94,12 @@ public class Message {
 	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
 	}
-
+	/**
+	 * 投稿日付の自動付与対応。
+	 */
+	@PrePersist
+	  public void prePersist() {
+	    Timestamp ts = new Timestamp((new Date()).getTime());
+	    this.postDate = ts;
+	    }
 }

@@ -41,6 +41,7 @@ gitクライアントをインストールしておくこと
 
 ### webAPI 
 
+メッセージ取得(GET)
 http://localhost:8080/messages/1
 
 {
@@ -52,7 +53,19 @@ http://localhost:8080/messages/1
 "postDate": 1508364160171
 }
 
-### ブラウザ向け
+メッセージ送信（POST)
+
+送信　
+
+curl -H 'Content-Type:application/json' -H "Accept: application/json" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/messages
+
+⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
+
+結果　
+
+{"messageId":43,"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001","postDate":1508364160171}
+
+### ブラウザ向け　
 
 http://localhost:8080/messagelist
 
