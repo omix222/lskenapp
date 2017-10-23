@@ -58,6 +58,10 @@ http://localhost:8080/messagelist
 
 メッセージ一覧が表示されればOK
 
+一旦 SpringMVCで作成しましたが、SPAで作って、APIから読んだ方が研究サンプルシステムにはあっているかもしれません。
+
+検討お願いします。
+
 ## H2Databaseコンソールアクセス方法 
 
 http://localhost:8080/h2-console/login.jsp

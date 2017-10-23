@@ -8,15 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
 @Table(name = "messages")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Message {
 
 	public Message(Integer messageId, String type, String messageDetail, String fromUserId, String groupId,

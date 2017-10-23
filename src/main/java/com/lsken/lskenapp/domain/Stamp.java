@@ -5,15 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
 @Table(name = "stamps")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Stamp {
 	
 	public Stamp(String fileName, String data) {

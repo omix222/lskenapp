@@ -1,0 +1,37 @@
+<html lang="jp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/font-awesome.css" th:href="@{css/font-awesome.css}" type="text/css"
+	media="screen" />
+<title>lsken group</title>
+</head>
+<body>
+
+	</div>
+	<h2>lsken group</h2>
+	
+	<table class="table">
+		<thead class="sunflower">
+			<tr>
+				<td>メッセージ種類</td>
+				<td>メッセージ詳細</td>
+				<td>メッセージ送信者</td>
+				<td>メッセージ送信日時</td>
+			</tr>
+		</thead>
+		<tbody th:each="list : ${msgs}">
+			<tr>
+				<td class="text-str" th:text="${list.type}"></td>
+				<td class="text-str" th:text="${list.messageDetail}"></td>
+				<td class="text-str" th:text="${list.fromUserId}"></td>
+				<td class="text-str" th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
