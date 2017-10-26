@@ -4,12 +4,14 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: "io.spring.dependency-management"
 
 group = 'com.lsken'
 version = '0.0.1-SNAPSHOT'
@@ -19,8 +21,16 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
 }
 
+dependencyManagement {
+     imports {
+          mavenBom 'org.springframework.cloud:spring-cloud-sleuth:1.3.0.RC1'
+     }
+}
 
 dependencies {
 	//compile('org.springframework.boot:spring-boot-starter-web')
@@ -33,6 +43,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	
 	compile("org.lazyluke:log4jdbc-remix:0.2.7")
+	
+	compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')

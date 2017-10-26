@@ -2,6 +2,8 @@ package com.lsken.lskenapp;
 
 import java.util.Date;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,6 +31,10 @@ public class LskenappApplication implements CommandLineRunner{
 	UserRepository userRepository;
 	@Autowired
 	StampRepository stampRepository;
+	
+	private static final Log log = LogFactory.getLog(LskenappApplication.class);
+
+	
 	@Override
 	public void run(String... strings) throws Exception {
 		
@@ -57,6 +63,7 @@ public class LskenappApplication implements CommandLineRunner{
 	}
 	@GetMapping("/")
 	public String home(String[] args) {
+		log.info(String.format("application is running!"));
 		return "hello world!!!";
 	}
 }
