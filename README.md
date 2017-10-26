@@ -34,7 +34,21 @@ gitクライアントをインストールしておくこと
 
 ## CloudFoundary設定、準備
 
-//TODO : PCF 無料枠で動くようにだけ準備しておく。（乗り換えできるように） 
+pcfのアカウントは事前に作成しておき、CLIツールを取得、セットアップしておく。
+
+参考　https://blog.ik.am/entries/359
+
+プロジェクトのトップから、　
+
+cf login
+
+cf push lskenapp -p build/libs/lskenapp-0.0.1-SNAPSHOT.jar
+ 
+成功したら、管理コンソール　https://login.run.pivotal.io/　
+からログインし、
+document > lskenapp を選択　＞　Routeに表示されているURLからアクセス可能。
+ 
+
 
 
 ## サンプルリクエスト、レスポンス 
