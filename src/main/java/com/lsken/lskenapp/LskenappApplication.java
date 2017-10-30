@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,7 +38,6 @@ public class LskenappApplication implements CommandLineRunner{
 	public void run(String... strings) throws Exception {
 		
 		//TODO 初期データ投入。あとで消す。
-		
 		Message message1 = new Message(2,"text","hello hello","u001","g001",new Date());
 		Message message2 = new Message(3,"text","hello hello","u001","g001",new Date());
 		Message message3 = new Message(4,"text","hello hello","u001","g001",new Date());
@@ -52,9 +50,6 @@ public class LskenappApplication implements CommandLineRunner{
 		
 		User user = new User("u001","takahashi");
 		userRepository.save(user);
-		
-		
-		
 		
 	}
 
