@@ -97,6 +97,15 @@ JDBCのURLのみ変更する。プロジェクトトップからのパスとし�
 
 例：jdbc:h2:~/oper/gradle/lskenapp/target/db/testdb
 
+GoogleMapAPIのサンプル。htmlをおきました。
+/lskenapp/src/main/resources/static/html/staticsample.html
+GoogleのAPIキーは伏せ字（XX)にしています。XXを置き換え、
+アプリ立ち上げ後、以下にアクセスしてみてください。
+
+
+http://localhost:8080/html/staticsample.html
+
+
 認証機能追加しました。
 初期データはWebSecurityConfigクラスにべた書きしている通りです。
 user / user
