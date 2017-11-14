@@ -96,3 +96,15 @@ http://localhost:8080/h2-console/login.jsp
 JDBCのURLのみ変更する。プロジェクトトップからのパスとして、/target/db/testdb　にファイルがあるので、そこを見れるようなパスをする。
 
 例：jdbc:h2:~/oper/gradle/lskenapp/target/db/testdb
+
+認証機能追加しました。
+初期データはWebSecurityConfigクラスにべた書きしている通りです。
+user / user
+admin / admin
+
+それに伴い、restAPIからの認証も追加しています。
+messages のエンドポイントのみを対応していますが、Springデフォルトのセキュリティの機構は回避し、
+MessageRestController内で
+・リクエストヘッダー内にAuthorizationが含まれるか
+・POSTの場合、追加でfromUserIdがリクエストBody内に含まれているか
+で認証OKか判断しています。

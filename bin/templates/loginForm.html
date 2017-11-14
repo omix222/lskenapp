@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>ログインフォーム</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}"/>
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/font-awesome.css" th:href="@{css/font-awesome.css}" type="text/css"
+	media="screen" />
+    <style>
+
+        * {
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        html {
+            color: #888;
+            display: table;
+            font-family: sans-serif;
+            height: 100%;
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+            margin: 2em auto;
+        }
+
+        h1 {
+            color: #555;
+            font-size: 2em;
+            font-weight: 400;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 280px;
+        }
+
+        @media only screen and (max-width: 280px) {
+
+            body, p {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin: 0 0 0.3em;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>LSKenApp-いまから帰るよシステム</h1>
+     <form id="loginForm" method="post" th:action="@{/login}">
+        <label for="username">username</label>
+        <input id="username" name="username" type="text" />
+        <label for="password">password</label>
+        <input id="password" name="password" type="password" />
+        <button type="submit">login</button>
+     </form>
+</div>
+</body>
+</html>
