@@ -1,5 +1,4 @@
 package com.lsken.lskenapp.web;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lsken.lskenapp.domain.Message;
@@ -13,14 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 @Controller
 public class MessageListController {
+	
 	@Autowired
-	MessageService messageService;
-
-	  @RequestMapping("/messagelist")
-	    public String index(Model model) {
-		  List<Message> messages = messageService.findAllOrderByPostDate();
-	 
-	        model.addAttribute("msgs", messages);
-	        return "messagelistview";
-	    }
+		MessageService messageService;
+	
+		  @RequestMapping("/messagelist")
+		    public String index(Model model) {
+			  List<Message> messages = messageService.findAllOrderByPostDate();
+		 
+		        model.addAttribute("msgs", messages);
+		        return "messagelistview";
+		    }
 	}

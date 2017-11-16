@@ -33,6 +33,9 @@ public class StampRestController {
 	
 	@PostMapping
 	Stamp postStamp(@RequestBody Stamp newStamp) {
+		System.out.println("filename : "+newStamp.getFilename());
+		System.out.println("data : "+newStamp.getData());
+		
 		Stamp createdStamp = stampService.create(newStamp);
 		return createdStamp;
 	}

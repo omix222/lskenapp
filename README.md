@@ -118,3 +118,13 @@ MessageRestController内で
 ・リクエストヘッダー内にAuthorizationが含まれるか
 ・POSTの場合、追加でfromUserIdがリクエストBody内に含まれているか
 で認証OKか判断しています。
+
+
+スタンプの画面参照サンプルを追加しました。
+http://localhost:8080/stamplist
+
+base64の画面表示例については、stamplistview.html　を参考にしてください。
+画像ファイルのbase64化については、別のツール活用が必要です。
+仕込みは一旦、LskenappApplication　の中でやっています。
+ゆくゆくは、/stampsへのPOSTでやれるクライアントを作れればよいですね。
+

@@ -11,7 +11,7 @@ public class Stamp {
 	
 	public Stamp(String fileName, String data) {
 		super();
-		this.fileName = fileName;
+		this.filename = fileName;
 		this.data = data;
 	}
 	
@@ -20,17 +20,18 @@ public class Stamp {
 	}
 	
 	@Id
-	private String fileName;
+	@Column(name="filename")
+	private String filename;
 
-	@Column(nullable = false)
+	@Column(nullable = false,length = 20000)
 	private String data;
 
-	public String getFileName() {
-		return fileName;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFilename(String fileName) {
+		this.filename = fileName;
 	}
 
 	public String getData() {
