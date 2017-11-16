@@ -46,7 +46,8 @@ cf push lskenapp -p build/libs/lskenapp-0.0.1-SNAPSHOT.jar
  
 成功したら、管理コンソール　https://login.run.pivotal.io/　
 からログインし、
-document > lskenapp を選択　＞　Routeに表示されているURLからアクセス可能。
+Pivotal Web Services >
+development > Apps > lskenapp を選択　＞　Routeに表示されているURLからアクセス可能。
  
 
 
@@ -71,7 +72,7 @@ http://localhost:8080/messages/1
 
 送信　
 
-curl -H 'Content-Type:application/json' -H "Accept: application/json" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/messages
+curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/messages
 
 ⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
 
