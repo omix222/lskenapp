@@ -57,8 +57,13 @@ development > Apps > lskenapp を選択　＞　Routeに表示されているURL
 ### webAPI 
 
 メッセージ取得(GET)
-http://localhost:8080/messages/1
+http://localhost:8080/lskenapp/api/v1.0/messages/1
+http request header
+ content-type: application/json
+ accept: application/json
+ authorization: toke
 
+response例
 {
 "messageId": 1,
 "type": "text",
@@ -72,7 +77,7 @@ http://localhost:8080/messages/1
 
 送信　
 
-curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/messages
+curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.0/messages
 
 ⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
 
@@ -82,7 +87,7 @@ curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "author
 
 ### ブラウザ向け　
 
-http://localhost:8080/messagelist
+http://localhost:8080/lskenapp/messagelist
 
 メッセージ一覧が表示されればOK
 
@@ -92,7 +97,7 @@ http://localhost:8080/messagelist
 
 ## H2Databaseコンソールアクセス方法 
 
-http://localhost:8080/h2-console/login.jsp
+http://localhost:8080/lskenapp/h2-console/login.jsp
 
 JDBCのURLのみ変更する。プロジェクトトップからのパスとして、/target/db/testdb　にファイルがあるので、そこを見れるようなパスをする。
 
@@ -104,7 +109,7 @@ GoogleのAPIキーは伏せ字（XX)にしています。XXを置き換え、
 アプリ立ち上げ後、以下にアクセスしてみてください。
 
 
-http://localhost:8080/html/staticsample.html
+http://localhost:8080/lskenapp/html/staticsample.html
 
 
 認証機能追加しました。
@@ -121,7 +126,7 @@ MessageRestController内で
 
 
 スタンプの画面参照サンプルを追加しました。
-http://localhost:8080/stamplist
+http://localhost:8080/lskenapp/stamplist
 
 base64の画面表示例については、stamplistview.html　を参考にしてください。
 画像ファイルのbase64化については、別のツール活用が必要です。

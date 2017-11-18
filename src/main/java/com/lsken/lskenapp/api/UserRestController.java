@@ -14,7 +14,7 @@ import com.lsken.lskenapp.domain.User;
 import com.lsken.lskenapp.service.UserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/v1.0/users")
 public class UserRestController {
 	@Autowired
 	UserService userService;

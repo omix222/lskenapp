@@ -14,7 +14,7 @@ import com.lsken.lskenapp.domain.Stamp;
 import com.lsken.lskenapp.service.StampService;
 
 @RestController
-@RequestMapping("/stamps")
+@RequestMapping("api/v1.0/stamps")
 public class StampRestController {
 	@Autowired
 	StampService stampService;

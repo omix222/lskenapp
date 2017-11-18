@@ -14,7 +14,7 @@ import com.lsken.lskenapp.domain.Group;
 import com.lsken.lskenapp.service.GroupService;
 
 @RestController
-@RequestMapping("/groups")
+@RequestMapping("api/v1.0/groups")
 public class GroupRestController {
 	@Autowired
 	GroupService groupService;

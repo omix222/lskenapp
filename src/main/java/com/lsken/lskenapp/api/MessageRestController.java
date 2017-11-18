@@ -16,7 +16,7 @@ import com.lsken.lskenapp.domain.Message;
 import com.lsken.lskenapp.service.MessageService;
 
 @RestController
-@RequestMapping("/messages")
+@RequestMapping("api/v1.0/messages")
 public class MessageRestController {
 	@Autowired
 	MessageService messageService;
