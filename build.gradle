@@ -12,6 +12,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: "io.spring.dependency-management"
+apply plugin: 'idea'
 
 group = 'com.lsken'
 version = '0.0.1-SNAPSHOT'
@@ -50,4 +51,9 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	//For RestAPIドキュメント生成（Spring-fox）
+	compile "io.springfox:springfox-swagger2:2.2.2"
+    compile "io.springfox:springfox-swagger-ui:2.2.2"
+    compile "com.google.guava:guava:17.0"
 }

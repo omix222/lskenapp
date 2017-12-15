@@ -133,3 +133,9 @@ base64の画面表示例については、stamplistview.html　を参考にし�
 仕込みは一旦、LskenappApplication　の中でやっています。
 ゆくゆくは、/stampsへのPOSTでやれるクライアントを作れればよいですね。
 
+SpringFoxを使って、Swagger UI生成に対応しました。
+http://localhost:8080/lskenapp/swagger-ui.html
+で各APIの仕様を確認することができます。要認証。
+
+
+
