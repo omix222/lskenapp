@@ -24,11 +24,15 @@ public class MessageService {
 	public List<Message> findAllOrderByPostDate() {
 		return messageRepository.findAll(new Sort(Direction.DESC,"postDate"));
 	}
-
+	public List<Message> findAllAndMergeOrderByPostDate() {
+		return messageRepository.findMerge();
+	}
 	public Message findOne(int mesageId) {
 		return messageRepository.findOne(mesageId);
 	}
-
+	public Message findOneMerge(int mesageId) {
+		return messageRepository.findMergeById(mesageId);
+	}
 	public Message create(Message mesage) {
 		return messageRepository.save(mesage);
 	}

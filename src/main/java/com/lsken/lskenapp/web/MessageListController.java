@@ -23,4 +23,10 @@ public class MessageListController {
 		        model.addAttribute("msgs", messages);
 		        return "messagelistview";
 		    }
+		  @RequestMapping("/messagelistmerge")
+		    public String indexMerge(Model model) {
+			  List<Message> messages = messageService.findAllAndMergeOrderByPostDate();
+		        model.addAttribute("msgs", messages);
+		        return "messagelistview";
+		    }
 	}

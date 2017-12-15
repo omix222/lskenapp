@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.lsken.lskenapp.domain.Group;
 import com.lsken.lskenapp.domain.Message;
@@ -21,7 +21,7 @@ import com.lsken.lskenapp.repository.StampRepository;
 import com.lsken.lskenapp.repository.UserRepository;
 
 @SpringBootApplication
-@RestController
+@Controller
 public class LskenappApplication implements CommandLineRunner{
 	@Autowired
 	MessageRepository messageRepository;
@@ -42,10 +42,13 @@ public class LskenappApplication implements CommandLineRunner{
 		Message message1 = new Message(2,"text","hello hello","u001","g001",new Date());
 		Message message2 = new Message(3,"text","hello hello","u001","g001",new Date());
 		Message message3 = new Message(4,"text","hello hello","u001","g001",new Date());
+		Message message4 = new Message(5,"stamp","1","u001","g001",new Date());
+		Message message5 = new Message(6,"stamp","2","u001","g001",new Date());
 		messageRepository.save(message1);
 		messageRepository.save(message2);
 		messageRepository.save(message3);
-		
+		messageRepository.save(message4);
+		messageRepository.save(message5);
 		Group group1 = new Group("g001","LS-007");
 		groupRepository.save(group1);
 		
@@ -76,6 +79,6 @@ public class LskenappApplication implements CommandLineRunner{
 	@GetMapping("/")
 	public String home(String[] args) {
 		log.info(String.format("application is running!"));
-		return "hello world!!!";
+		return "hellospringmvc";
 	}
 }

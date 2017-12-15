@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -46,7 +48,7 @@ public class Message {
 	
 	@Column
 	private Date postDate;
-
+	
 	public Integer getMessageId() {
 		return messageId;
 	}
@@ -94,6 +96,7 @@ public class Message {
 	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
 	}
+	
 	/**
 	 * 投稿日付の自動付与対応。
 	 */
@@ -102,4 +105,6 @@ public class Message {
 	    Timestamp ts = new Timestamp((new Date()).getTime());
 	    this.postDate = ts;
 	    }
+	
+	
 }

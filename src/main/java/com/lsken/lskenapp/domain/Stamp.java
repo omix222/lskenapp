@@ -23,7 +23,7 @@ public class Stamp {
 	@Column(name="filename")
 	private String filename;
 
-	@Column(nullable = false,length = 20000)
+	@Column(length = 20000)
 	private String data;
 
 	public String getFilename() {
