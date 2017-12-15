@@ -163,6 +163,9 @@ SpringFoxを使って、Swagger UI生成に対応しました。
 http://localhost:8080/lskenapp/swagger-ui.html
 で各APIの仕様を確認することができます。要認証。
 
+http://localhost:8080/lskenapp/v2/api-docs?group=public
+でswagger yamlも取得可能。
+
 確認用のリンク集を作りました。起動後、以下にアクセスしてみてください。
 http://localhost:8080/lskenapp/
 

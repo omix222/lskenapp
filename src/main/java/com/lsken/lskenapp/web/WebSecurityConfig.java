@@ -15,7 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) {
-		web.ignoring().antMatchers("/webjars/**","/css/**","/fonts/**","/html/**","/images/**","/js/**","/api/**","/h2-console/**","/stamps");
+		web.ignoring().antMatchers("/webjars/**","/css/**","/fonts/**","/html/**","/images/**","/js/**","/api/**","/h2-console/**","/stamps","/v2/api-docs.json","/v2/api-docs");
 	}
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
