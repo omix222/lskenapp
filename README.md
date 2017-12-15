@@ -39,6 +39,10 @@ pcfのアカウントは事前に作成しておき、CLIツールを取得、�
 参考　https://blog.ik.am/entries/359
 
 プロジェクトのトップから、　
+ * 初回は以下実行要  
+ ./gradlew cleanIdea idea
+ 
+./gradlew build
 
 cf login
 
@@ -47,8 +51,8 @@ cf push lskenapp -p build/libs/lskenapp-0.0.1-SNAPSHOT.jar
 成功したら、管理コンソール　https://login.run.pivotal.io/　
 からログインし、
 Pivotal Web Services >
-development > Apps > lskenapp を選択　＞　Routeに表示されているURLからアクセス可能。
- 
+development > Apps > lskenapp を選択　＞　Routeに表示されているURLにコンテキストパスの/lskenappを追加したURLからアクセス可能。
+ 例：　　https://lskenapp.cfapps.io/lskenapp/
 
 ## サンプルリクエスト、レスポンス 
 
