@@ -27,6 +27,6 @@ public class MessageListController {
 		    public String indexMerge(Model model) {
 			  List<Message> messages = messageService.findAllAndMergeOrderByPostDate();
 		        model.addAttribute("msgs", messages);
-		        return "messagelistview";
+		        return "messagelistviewstampmerge";
 		    }
 	}
