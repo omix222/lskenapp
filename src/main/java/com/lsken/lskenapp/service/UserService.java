@@ -3,14 +3,10 @@ package com.lsken.lskenapp.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lsken.lskenapp.domain.Message;
 import com.lsken.lskenapp.domain.User;
-import com.lsken.lskenapp.repository.MessageRepository;
 import com.lsken.lskenapp.repository.UserRepository;
 
 @Service
