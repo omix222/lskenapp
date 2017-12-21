@@ -32,7 +32,7 @@ public class CustomMessageRestController {
 	List<CustomMessage> getMessages(@RequestHeader(name = "Authorization") String token) {
 		// 簡易認証
 		if (token == null || token.equals("")) {
-			throw new AccessDeniedException("fromUserId is invalid!!");
+			throw new AccessDeniedException("Authorization is invalid!!");
 		}
 		List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
 		return messages;
@@ -42,7 +42,7 @@ public class CustomMessageRestController {
 	CustomMessage getMessage(@PathVariable Integer id, @RequestHeader(name = "Authorization") String token) {
 		// 簡易認証
 		if (token == null || token.equals("")) {
-			throw new AccessDeniedException("fromUserId is invalid!!");
+			throw new AccessDeniedException("Authorization is invalid!!");
 		}
 		CustomMessage message = messageService.findOneMerge(id);
 		return message;
