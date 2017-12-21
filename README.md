@@ -139,9 +139,11 @@ http://localhost:8080/lskenapp/html/staticsample.html
 
 
 認証機能追加しました。
-初期データはWebSecurityConfigクラスにべた書きしている通りです。
-user / user
-admin / admin
+初期データは以下ユーザーの通りです。パスワードは不要です。
+user
+admin
+u001〜u004
+
 
 それに伴い、restAPIからの認証も追加しています。
 messages のエンドポイントのみを対応していますが、Springデフォルトのセキュリティの機構は回避し、
