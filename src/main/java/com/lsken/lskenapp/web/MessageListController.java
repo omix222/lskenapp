@@ -1,6 +1,7 @@
 package com.lsken.lskenapp.web;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.lsken.lskenapp.domain.CustomMessage;
 import com.lsken.lskenapp.domain.Message;
 import com.lsken.lskenapp.service.MessageService;
 
@@ -25,7 +26,7 @@ public class MessageListController {
 		    }
 		  @RequestMapping("/messagelistmerge")
 		    public String indexMerge(Model model) {
-			  List<Message> messages = messageService.findAllAndMergeOrderByPostDate();
+			  List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
 		        model.addAttribute("msgs", messages);
 		        return "messagelistviewstampmerge";
 		    }

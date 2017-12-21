@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lsken.lskenapp.domain.CustomMessage;
 import com.lsken.lskenapp.domain.Message;
 import com.lsken.lskenapp.service.MessageService;
 /**
@@ -26,22 +27,22 @@ public class CustomMessageRestController {
 	MessageService messageService;
 
 	@GetMapping
-	List<Message> getMessages(@RequestHeader(name = "Authorization") String token) {
+	List<CustomMessage> getMessages(@RequestHeader(name = "Authorization") String token) {
 		// 簡易認証
 		if (token == null || token.equals("")) {
 			throw new AccessDeniedException("fromUserId is invalid!!");
 		}
-		List<Message> messages = messageService.findAllAndMergeOrderByPostDate();
+		List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
 		return messages;
 	}
 
 	@GetMapping(path = "{id}")
-	Message getMessage(@PathVariable Integer id, @RequestHeader(name = "Authorization") String token) {
+	CustomMessage getMessage(@PathVariable Integer id, @RequestHeader(name = "Authorization") String token) {
 		// 簡易認証
 		if (token == null || token.equals("")) {
 			throw new AccessDeniedException("fromUserId is invalid!!");
 		}
-		Message message = messageService.findOneMerge(id);
+		CustomMessage message = messageService.findOneMerge(id);
 		return message;
 	}
 

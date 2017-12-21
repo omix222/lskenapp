@@ -30,7 +30,7 @@
 					<td th:case="stamp"><img th:src="'data:image/png;base64,' + ${list.messageDetail}"/></td>
 					<td th:case="*" class="text-str" th:text="${list.messageDetail}"></td>
 				</div>
-				<td class="text-str" th:text="${list.fromUserId}"></td>
+				<td class="text-str" th:text="${list.fromUserName}"></td>
 				<td class="text-str" th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></td>
 			</tr>
 		</tbody>

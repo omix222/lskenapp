@@ -8,7 +8,9 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lsken.lskenapp.domain.CustomMessage;
 import com.lsken.lskenapp.domain.Message;
+import com.lsken.lskenapp.repository.CustomMessageRepository;
 import com.lsken.lskenapp.repository.MessageRepository;
 
 @Service
@@ -16,6 +18,9 @@ import com.lsken.lskenapp.repository.MessageRepository;
 public class MessageService {
 	@Autowired
 	MessageRepository messageRepository;
+	
+	@Autowired
+	CustomMessageRepository customuMessageRepository;
 
 	public List<Message> findAll() {
 		return messageRepository.findAll();
@@ -24,14 +29,14 @@ public class MessageService {
 	public List<Message> findAllOrderByPostDate() {
 		return messageRepository.findAll(new Sort(Direction.DESC,"postDate"));
 	}
-	public List<Message> findAllAndMergeOrderByPostDate() {
-		return messageRepository.findMerge();
+	public List<CustomMessage> findAllAndMergeOrderByPostDate() {
+		return customuMessageRepository.findMerge();
 	}
 	public Message findOne(int mesageId) {
 		return messageRepository.findOne(mesageId);
 	}
-	public Message findOneMerge(int mesageId) {
-		return messageRepository.findMergeById(mesageId);
+	public CustomMessage findOneMerge(int mesageId) {
+		return customuMessageRepository.findMergeById(mesageId);
 	}
 	public Message create(Message mesage) {
 		return messageRepository.save(mesage);
