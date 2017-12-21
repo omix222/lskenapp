@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import com.lsken.lskenapp.service.MessageService;
  * 既存のものはメッセージ取得時にスタンプがあった場合はmessageDetailにStampIDが返ってきていたが、
  * 画像データそのものを返すようにしたもの。パフォーマンス向上を狙いとしたもの。
  */
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1.1/messages")
 public class CustomMessageRestController {
