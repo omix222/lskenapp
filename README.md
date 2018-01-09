@@ -135,7 +135,7 @@ https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
 * http://localhost:8080/lskenapp/html/staticsample.html
 
 
-* 認証機能追加しました。
+## 認証機能追加しました。
 * 初期データは以下ユーザーの通りです。パスワードは不要です。
 * u001〜u004
 
@@ -148,7 +148,7 @@ https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
 * で認証OKか判断しています。
 
 
-* スタンプの画面参照サンプルを追加しました。
+## スタンプの画面参照サンプルを追加しました。
 * http://localhost:8080/lskenapp/stamplist
 
 * base64の画面表示例については、stamplistview.html　を参考にしてください。
@@ -156,13 +156,13 @@ https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
 * 仕込みは一旦、LskenappApplication　の中でやっています。
 * ゆくゆくは、/stampsへのPOSTでやれるクライアントを作れればよいですね。
 
-* SpringFoxを使って、Swagger UI生成に対応しました。
+## SpringFoxを使って、Swagger UI生成に対応しました。
 * http://localhost:8080/lskenapp/swagger-ui.html
 * で各APIの仕様を確認することができます。要認証。
 
 * http://localhost:8080/lskenapp/v2/api-docs?group=public
 * でswagger yamlも取得可能。
 
-* 確認用のリンク集を作りました。起動後、以下にアクセスしてみてください。
+## 確認用のリンク集を作りました。起動後、以下にアクセスしてみてください。
 * http://localhost:8080/lskenapp/
 
