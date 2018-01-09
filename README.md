@@ -4,21 +4,20 @@
 
 ## 導入手順 
 
-ローカル端末にSTS(Spring Tool Suite)をインストールする。
+* ローカル端末にSTS(Spring Tool Suite)をインストールする。
 
-・参考手順
+* 参考手順
 https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
 
+* STSにEclipseプラグインである、Buildshipをイントールする。
+    * Eclipse Marketplaceにあります。
+    * help→Eclipse Marketplace
+    * 「buildship」で検索
+    * installをクリック。
 
-STSにEclipseプラグインである、Buildshipをイントールする。
-　Eclipse Marketplaceにあります。
-　help→Eclipse Marketplace
-　「buildship」で検索
-　installをクリック。
+## githubからローカルへのチェックアウト
 
-githubからローカルへのチェックアウト
-
-gitクライアントをインストールしておくこと
+* gitクライアントをインストールしておくこと
 
 ### STSへのインポート 
 -  パッケージエクスプローラから、右クリック　Import > Gradle > Existing Gradle Project > チェックアウトしたプロジェクトのフォルダ
@@ -34,38 +33,33 @@ gitクライアントをインストールしておくこと
 
 ## CloudFoundary設定、準備
 
-pcfのアカウントは事前に作成しておき、CLIツールを取得、セットアップしておく。
+* pcfのアカウントは事前に作成しておき、CLIツールを取得、セットアップしておく。
 
-参考　https://blog.ik.am/entries/359
+* 参考　https://blog.ik.am/entries/359
 
-プロジェクトのトップから、　
- * 初回は以下実行要  
- ./gradlew cleanIdea idea
+* プロジェクトのトップから、　
+   * 初回は以下実行要  
+   * ./gradlew cleanIdea idea
+   * ./gradlew build
+   * cf login
+   * cf push lskenapp -p build/libs/lskenapp-0.0.1-SNAPSHOT.jar
  
-./gradlew build
-
-cf login
-
-cf push lskenapp -p build/libs/lskenapp-0.0.1-SNAPSHOT.jar
- 
-成功したら、管理コンソール　https://login.run.pivotal.io/　
-からログインし、
-Pivotal Web Services >
-development > Apps > lskenapp を選択　＞　Routeに表示されているURLにコンテキストパスの/lskenappを追加したURLからアクセス可能。
- 例：　　https://lskenapp.cfapps.io/lskenapp/
+* 成功したら、管理コンソール　
+* https://login.run.pivotal.io/　
+* からログインし、
+* Pivotal Web Services >development > Apps > lskenapp を選択　＞　
+* Routeに表示されているURLにコンテキストパスの/lskenappを追加したURLからアクセス可能。
+   * 例：　　https://lskenapp.cfapps.io/lskenapp/
 
 ## サンプルリクエスト、レスポンス 
 
 ### webAPI 
 
-メッセージ取得(GET)
-http://localhost:8080/lskenapp/api/v1.0/messages/1
-http request header
- content-type: application/json
- accept: application/json
- authorization: toke
+* メッセージ取得(GET)
+* http://localhost:8080/lskenapp/api/v1.1/messages/1
 
-response例
+* response例
+
 {
 "messageId": 1,
 "type": "text",
@@ -75,16 +69,14 @@ response例
 "postDate": 1508364160171
 }
 
-性能強化版
+* 性能強化版
 
-メッセージ取得(GET)
-http://localhost:8080/lskenapp/api/v1.1/messages/6
-http request header
- content-type: application/json
- accept: application/json
- authorization: toke
+* メッセージ取得(GET)
+* http://localhost:8080/lskenapp/api/v1.1/messages/6
 
-response例
+
+* response例
+
 {
   "messageId": 6,
   "type": "stamp",
@@ -95,85 +87,82 @@ response例
 }
 
 
-メッセージ送信（POST)
+* メッセージ送信（POST)
 
-text 送信　
+* text 送信　
 
-curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
+* curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
 
-⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
+* ⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
 
-結果　
+* 結果　
 
-{"messageId":43,"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001","postDate":1508364160171}
+* {"messageId":43,"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001","postDate":1508364160171}
 
 
-map 情報送信
+* map 情報送信
 
-curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"map","messageDetail":"35.174744,136.909650","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
+* curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"map","messageDetail":"35.174744,136.909650","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
 
 
 ### ブラウザ向け　
 
-http://localhost:8080/lskenapp/messagelist
+* http://localhost:8080/lskenapp/messagelist
 
-メッセージ一覧が表示されればOK
+* メッセージ一覧が表示されればOK
 
-性能強化版のブラウザでの確認画面
 
-http://localhost:8080/lskenapp/messagelistmerge
+* 性能強化版のブラウザでの確認画面
 
-一旦 SpringMVCで作成しましたが、SPAで作って、APIから読んだ方が研究サンプルシステムにはあっているかもしれません。
+* http://localhost:8080/lskenapp/messagelistmerge
 
-検討お願いします。
+* 一旦 SpringMVCで作成しましたが、SPAで作って、APIから読んだ方が研究サンプルシステムにはあっているかもしれません。検討お願いします。
 
 ## H2Databaseコンソールアクセス方法 
 
-http://localhost:8080/lskenapp/h2-console/login.jsp
+* http://localhost:8080/lskenapp/h2-console/login.jsp
 
-JDBCのURLのみ変更する。プロジェクトトップからのパスとして、/target/db/testdb　にファイルがあるので、そこを見れるようなパスをする。
+* JDBCのURLのみ変更する。プロジェクトトップからのパスとして、/target/db/testdb　にファイルがあるので、そこを見れるようなパスをする。
 
-例：jdbc:h2:~/oper/gradle/lskenapp/target/db/testdb
+    * 例：jdbc:h2:~/oper/gradle/lskenapp/target/db/testdb
 
-GoogleMapAPIのサンプル。htmlをおきました。
-/lskenapp/src/main/resources/static/html/staticsample.html
-GoogleのAPIキーは伏せ字（XX)にしています。XXを置き換え、
-アプリ立ち上げ後、以下にアクセスしてみてください。
+## GoogleMapAPIのサンプル。htmlをおきました。
 
+* /lskenapp/src/main/resources/static/html/staticsample.html
+* GoogleのAPIキーは伏せ字（XX)にしています。XXを置き換え、
+* アプリ立ち上げ後、以下にアクセスしてみてください。
 
-http://localhost:8080/lskenapp/html/staticsample.html
-
-
-認証機能追加しました。
-初期データは以下ユーザーの通りです。パスワードは不要です。
-user
-admin
-u001〜u004
+* http://localhost:8080/lskenapp/html/staticsample.html
 
 
-それに伴い、restAPIからの認証も追加しています。
-messages のエンドポイントのみを対応していますが、Springデフォルトのセキュリティの機構は回避し、
-MessageRestController内で
-・リクエストヘッダー内にAuthorizationが含まれるか
-・POSTの場合、追加でfromUserIdがリクエストBody内に含まれているか
-で認証OKか判断しています。
+* 認証機能追加しました。
+* 初期データは以下ユーザーの通りです。パスワードは不要です。
+* u001〜u004
 
 
-スタンプの画面参照サンプルを追加しました。
-http://localhost:8080/lskenapp/stamplist
+* それに伴い、restAPIからの認証も追加しています。
+* messages のエンドポイントのみを対応していますが、Springデフォルトのセキュリティの機構は回避し、
+* MessageRestController内で
+* ・リクエストヘッダー内にAuthorizationが含まれるか
+* ・POSTの場合、追加でfromUserIdがリクエストBody内に含まれているか
+* で認証OKか判断しています。
 
-base64の画面表示例については、stamplistview.html　を参考にしてください。
-画像ファイルのbase64化については、別のツール活用が必要です。
-仕込みは一旦、LskenappApplication　の中でやっています。
-ゆくゆくは、/stampsへのPOSTでやれるクライアントを作れればよいですね。
 
-SpringFoxを使って、Swagger UI生成に対応しました。
-http://localhost:8080/lskenapp/swagger-ui.html
-で各APIの仕様を確認することができます。要認証。
+* スタンプの画面参照サンプルを追加しました。
+* http://localhost:8080/lskenapp/stamplist
 
-http://localhost:8080/lskenapp/v2/api-docs?group=public
-でswagger yamlも取得可能。
+* base64の画面表示例については、stamplistview.html　を参考にしてください。
+* 画像ファイルのbase64化については、別のツール活用が必要です。
+* 仕込みは一旦、LskenappApplication　の中でやっています。
+* ゆくゆくは、/stampsへのPOSTでやれるクライアントを作れればよいですね。
 
-確認用のリンク集を作りました。起動後、以下にアクセスしてみてください。
-http://localhost:8080/lskenapp/
+* SpringFoxを使って、Swagger UI生成に対応しました。
+* http://localhost:8080/lskenapp/swagger-ui.html
+* で各APIの仕様を確認することができます。要認証。
+
+* http://localhost:8080/lskenapp/v2/api-docs?group=public
+* でswagger yamlも取得可能。
+
+* 確認用のリンク集を作りました。起動後、以下にアクセスしてみてください。
+* http://localhost:8080/lskenapp/
 
