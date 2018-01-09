@@ -97,15 +97,21 @@ response例
 
 メッセージ送信（POST)
 
-送信　
+text 送信　
 
-curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.0/messages
+curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
 
 ⇨messageIdとpostDateはサーバ側で採番、時刻取得するため、クライアントからの送信は不要。
 
 結果　
 
 {"messageId":43,"type":"text","messageDetail":"curl posted","fromUserId":"u002","groupId":"g001","postDate":1508364160171}
+
+
+map 情報送信
+
+curl -H 'Content-Type:application/json' -H "Accept: application/json" -H "authorization: token" -X POST -d '{"type":"map","messageDetail":"35.174744,136.909650","fromUserId":"u002","groupId":"g001"}' http://localhost:8080/lskenapp/api/v1.1/messages
+
 
 ### ブラウザ向け　
 

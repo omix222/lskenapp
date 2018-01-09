@@ -28,6 +28,7 @@
 				<td class="text-str" th:text="${list.type}"></td>
 				<div th:switch="${list.type}">
 					<td th:case="stamp"><img th:src="'data:image/png;base64,' + ${list.messageDetail}"/></td>
+					<td th:case="map"><a th:href="@{'https://www.google.co.jp/maps?q=' + ${list.messageDetail} +'+'}">link</a></td>
 					<td th:case="*" class="text-str" th:text="${list.messageDetail}"></td>
 				</div>
 				<td class="text-str" th:text="${list.fromUserName}"></td>

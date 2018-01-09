@@ -47,6 +47,7 @@ public class LskenappApplication implements CommandLineRunner{
 		Message message6 = new Message(6,"stamp","3","u002","g001",new Date());
 		Message message7 = new Message(7,"stamp","4","u003","g001",new Date());
 		Message message8 = new Message(8,"text","u004 text","u004","g001",new Date());
+		Message message9 = new Message(9,"map","35.174744,136.909650","u004","g001",new Date());
 
 		messageRepository.save(message1);
 		messageRepository.save(message2);
@@ -56,6 +57,7 @@ public class LskenappApplication implements CommandLineRunner{
 		messageRepository.save(message6);
 		messageRepository.save(message7);
 		messageRepository.save(message8);
+		messageRepository.save(message9);
 		Group group1 = new Group("g001","LS-007");
 		groupRepository.save(group1);
 		
