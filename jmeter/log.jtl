@@ -1,2 +1,22 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1515807988917,57,メッセージ一覧取得,200,,細々API負荷検証 1-1,text,true,,2440,223,1,1,57,0,4
+1515808695476,52,メッセージ一覧取得,200,,細々API負荷検証 1-1,text,true,,2440,223,1,1,51,0,8
+1515808695550,40,ForEach用の変数作成,200,OK,細々API負荷検証 1-1,text,true,,0,0,1,1,0,0,0
+1515808695594,0,ユーザー取得,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in path at index 55: http://localhost:8080/lskenapp/api/v1.0/users/userIdVar],細々API負荷検証 1-1,text,false,,1043,0,1,1,0,0,0
+1515808695601,0,ユーザー取得,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in path at index 55: http://localhost:8080/lskenapp/api/v1.0/users/userIdVar],細々API負荷検証 1-1,text,false,,1043,0,1,1,0,0,0
+1515808695607,0,ユーザー取得,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in path at index 55: http://localhost:8080/lskenapp/api/v1.0/users/userIdVar],細々API負荷検証 1-1,text,false,,1043,0,1,1,0,0,0
+1515808715773,27,メッセージ一覧取得,200,,細々API負荷検証 1-1,text,true,,2440,223,1,1,26,0,1
+1515808715801,4,ForEach用の変数作成,200,OK,細々API負荷検証 1-1,text,true,,0,0,1,1,0,0,0
+1515808715808,13,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,211,225,1,1,12,0,0
+1515808715824,9,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,215,225,1,1,8,0,0
+1515808715833,16,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,214,225,1,1,16,0,0
+1515808762773,34,メッセージ一覧取得,200,,細々API負荷検証 1-1,text,true,,2440,223,1,1,33,0,4
+1515808762808,2,ForEach用の変数作成,200,OK,細々API負荷検証 1-1,text,true,,0,0,1,1,0,0,0
+1515808762811,14,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,215,225,1,1,14,0,0
+1515808762826,17,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,211,225,1,1,16,0,0
+1515808762843,15,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,215,225,1,1,15,0,0
+1515808792176,20,メッセージ一覧取得,200,,細々API負荷検証 1-1,text,true,,2440,223,1,1,19,0,0
+1515808792196,3,ForEach用の変数作成,200,OK,細々API負荷検証 1-1,text,true,,0,0,1,1,0,0,0
+1515808792199,16,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,215,225,1,1,16,0,0
+1515808792216,11,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,211,225,1,1,10,0,0
+1515808792228,10,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,215,225,1,1,9,0,0
+1515808792239,11,ユーザー取得,200,,細々API負荷検証 1-1,text,true,,214,225,1,1,10,0,0
