@@ -1,0 +1,63 @@
+<html lang="jp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap.css"
+	th:href="@{css/bootstrap.css}" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/font-awesome.css"
+	th:href="@{css/font-awesome.css}" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/likealine.css"
+	th:href="@{css/likealine.css}" type="text/css" media="screen" />
+<title>lsken group</title>
+</head>
+<body>
+	<div class="line-bc">
+		<div th:each="list : ${msgs}">
+			<div th:switch="${list.fromUserName}">
+				<!--②左コメント始-->
+				<div th:case="yuma" class="balloon6">
+					<div class="faceicon">
+						<img src="images/stamps/1.png" th:src="@{images/stamps/1.png}" />
+					</div>
+					<div class="chatting">
+						<div class="says" th:switch="${list.type}">
+							<p th:case="stamp">
+								<img th:src="'data:image/png;base64,' + ${list.messageDetail}" />
+							<p>
+							<p th:case="map">
+								<a
+									th:href="@{'https://www.google.co.jp/maps?q=' + ${list.messageDetail} +'+'}">link</a>
+							</p>
+							<p th:case="*" class="text-str" th:text="${list.messageDetail}"></p>
+						</div>
+					</div>
+					<div class="chatting">
+						<p th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></p>
+					</div>
+				</div>
+				<!--②/左コメント終-->
+				<div th:case="takahashi">
+					<!--③右コメント始-->
+					<div class="mycomment">
+						<div class="says" th:switch="${list.type}">
+							<p th:case="stamp">
+								<img th:src="'data:image/png;base64,' + ${list.messageDetail}" />
+							<p>
+							<p th:case="map">
+								<a
+									th:href="@{'https://www.google.co.jp/maps?q=' + ${list.messageDetail} +'+'}">link</a>
+							</p>
+							<p th:case="*" class="text-str" th:text="${list.messageDetail}"></p>
+						</div>
+					</div>
+					<div class="mycomment">
+						<p th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></p>
+					</div>
+					<!--②/左コメント終-->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

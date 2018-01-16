@@ -30,4 +30,11 @@ public class MessageListController {
 		        model.addAttribute("msgs", messages);
 		        return "messagelistviewstampmerge";
 		    }
+		  
+		  @RequestMapping("/messagelistlikealine")
+		    public String likealine(Model model) {
+			  List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
+		        model.addAttribute("msgs", messages);
+		        return "likealine";
+		    }
 	}
