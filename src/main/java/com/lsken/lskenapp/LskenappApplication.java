@@ -1,6 +1,7 @@
 package com.lsken.lskenapp;
 
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,6 +38,8 @@ public class LskenappApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... strings) throws Exception {
+		//PCF上でGWTにならないように固定化
+		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 		
 		//TODO 初期データ投入。あとで消す。
 		Message message1 = new Message(2,"text","hello hello","u001","g001",new Date());
