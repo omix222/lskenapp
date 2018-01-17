@@ -42,11 +42,11 @@ public class LskenappApplication implements CommandLineRunner{
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 		
 		//TODO 初期データ投入。あとで消す。
-		Message message1 = new Message(2,"text","hello hello","u001","g001",new Date());
-		Message message2 = new Message(3,"text","hello hello","u001","g001",new Date());
-		Message message3 = new Message(4,"text","hello hello","u001","g001",new Date());
-		Message message4 = new Message(5,"stamp","1","u001","g001",new Date());
-		Message message5 = new Message(6,"stamp","2","u001","g001",new Date());
+		Message message1 = new Message(1,"text","hello hello","u001","g001",new Date());
+		Message message2 = new Message(2,"text","hello hello","u001","g001",new Date());
+		Message message3 = new Message(3,"text","hello hello","u001","g001",new Date());
+		Message message4 = new Message(4,"stamp","1","u001","g001",new Date());
+		Message message5 = new Message(5,"stamp","2","u001","g001",new Date());
 		Message message6 = new Message(6,"stamp","3","u002","g001",new Date());
 		Message message7 = new Message(7,"stamp","4","u003","g001",new Date());
 		Message message8 = new Message(8,"text","u004 text","u004","g001",new Date());
@@ -55,14 +55,14 @@ public class LskenappApplication implements CommandLineRunner{
 		Message message11 = new Message(11,"map","35.174744,136.909650","u005","g001",new Date());
 		
 		messageRepository.save(message1);
-		messageRepository.save(message2);
-		messageRepository.save(message3);
-		messageRepository.save(message4);
-		messageRepository.save(message5);
-		messageRepository.save(message6);
-		messageRepository.save(message7);
-		messageRepository.save(message8);
-		messageRepository.save(message9);
+//		messageRepository.save(message2);
+//		messageRepository.save(message3);
+//		messageRepository.save(message4);
+//		messageRepository.save(message5);
+//		messageRepository.save(message6);
+//		messageRepository.save(message7);
+//		messageRepository.save(message8);
+//		messageRepository.save(message9);
 		messageRepository.save(message10);
 		messageRepository.save(message11);
 		Group group1 = new Group("g001","LS-007");
