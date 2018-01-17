@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -76,5 +77,13 @@ public class CustomMessageRestController {
 
 		Message createdMessage = messageService.create(newMessage);
 		return createdMessage;
+	}
+	@DeleteMapping
+	void deleteMessage(@RequestBody int messageId, @RequestHeader(name = "Authorization") String token) {
+		// 簡易認証
+		if (token == null || token.equals("") ) {
+			throw new AccessDeniedException("fromUserId is invalid!!");
+		}
+		messageService.delete(messageId);
 	}
 }

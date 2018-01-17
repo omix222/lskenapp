@@ -89,7 +89,8 @@
     position: relative; 
     font-size: 15px:
 }
-
+input:focus, select:focus, textarea:focus {
+}
 /* 
 .mycomment p{
     display: inline-block;
