@@ -34,27 +34,29 @@
 					</div>
 					<div class="chatting">
 						<p id="013" 
-							th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></p>
+							th:text="${#dates.format(list.postDate, 'MM/dd HH:mm:ss')}"></p>
 					</div>
 					<!--②左コメント終-->
 				</div>
 				
-				<div th:case="XXtakahashi" class="mycomment">
+				<div th:case="takahashi" class="mycomment">
 				<!--③右コメント始-->
-					<div class="says" th:switch="${list.type}">
-						<p id="001" th:case="stamp">
+					<div th:switch="${list.type}">
+						<p class="mycommentp" id="001" th:case="stamp">
 							<img th:src="'data:image/png;base64,' + ${list.messageDetail}" />
 						<p>
-						<p id="002" th:case="map">
+						<p class="mycommentp" id="002" th:case="map">
 							<a
 								th:href="@{'https://www.google.co.jp/maps?q=' + ${list.messageDetail} +'+'}">link</a>
 						</p>
-						<p id="003" th:case="*" th:text="${list.messageDetail}"></p>
+						<p  class="mycommentp" id="003" th:case="*" th:text="${list.messageDetail}"></p>
 					</div>
-					<div class="says">
-						<p id="004" th:text="${#dates.format(list.postDate, 'yyyy/MM/dd HH:mm:ss')}"></p>
+					<div>
+						<p  class="mytime" id="004" th:text="${#dates.format(list.postDate, 'MM/dd HH:mm:ss')}"></p>
 					</div>
 				<!--④右コメント始-->
+				</div>
+				<div th:case="*">
 				</div>
 			</div>
 		</div>

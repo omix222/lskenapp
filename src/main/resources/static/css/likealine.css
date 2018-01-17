@@ -62,6 +62,35 @@
 .mycomment {
     margin: 10px 0;
 }
+.mycommentp{
+    display: inline-block;
+    position: relative; 
+    margin: 0 10px 0 0;
+    padding: 8px;
+    max-width: 250px;
+    border-radius: 12px;
+    background: #30e852;
+    font-size: 15px:
+}
+
+.mycommentp:after {
+    content: "";
+    position: absolute;
+    top: 3px; 
+    right: -19px;
+    border: 8px solid transparent;
+    border-left: 18px solid #30e852;
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+.mytime{
+    display: inline-block;
+    position: relative; 
+    font-size: 15px:
+}
+
+/* 
 .mycomment p{
     display: inline-block;
     position: relative; 
@@ -84,3 +113,4 @@
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg);
 }
+ */
