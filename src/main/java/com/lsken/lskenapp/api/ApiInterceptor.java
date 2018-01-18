@@ -15,6 +15,11 @@ public class ApiInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
 	{
+		// CROS preflight request 時はOKにする
+		if (request.getMethod().equals("OPTIONS")) {
+			return true;
+		}
+
 		// Token(ユーザーID)を取得
 		String authorization = request.getHeader("Authorization");
 		if(authorization != null && !authorization.equals("")) {

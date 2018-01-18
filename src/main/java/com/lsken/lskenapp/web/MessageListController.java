@@ -35,6 +35,15 @@ public class MessageListController {
 		    public String likealine(Model model) {
 			  List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
 		        model.addAttribute("msgs", messages);
+		        model.addAttribute("mesageForm", new Message());
+		        return "likealine";
+		    }
+		  @RequestMapping("/messegepost")
+		    public String likealinePost(Model model) {
+			  
+			  List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
+		        model.addAttribute("msgs", messages);
+		        model.addAttribute("mesageForm", new Message());
 		        return "likealine";
 		    }
 	}
