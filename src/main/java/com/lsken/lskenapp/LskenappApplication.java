@@ -42,18 +42,18 @@ public class LskenappApplication implements CommandLineRunner{
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 		
 		//TODO 初期データ投入。あとで消す。
-		Message message1 = new Message(1,"text","hello hello","u001","g001",new Date());
-		Message message2 = new Message(2,"text","hello hello","u001","g001",new Date());
-		Message message3 = new Message(3,"text","hello hello","u001","g001",new Date());
-		Message message4 = new Message(4,"stamp","1","u001","g001",new Date());
+		Message message1 = new Message(1,"text","hello hello","u002","g001",new Date());
+		Message message2 = new Message(2,"text","hello hello","u002","g001",new Date());
+		Message message3 = new Message(3,"text","hello hello","u002","g001",new Date());
 		Message message5 = new Message(5,"stamp","2","u001","g001",new Date());
 		Message message6 = new Message(6,"stamp","3","u002","g001",new Date());
 		Message message7 = new Message(7,"stamp","4","u003","g001",new Date());
 		Message message8 = new Message(8,"text","u004 text","u004","g001",new Date());
 		Message message9 = new Message(9,"map","35.174744,136.909650","u004","g001",new Date());
-		Message message10 = new Message(10,"text","今から帰るよ","u005","g001",new Date());
-		Message message11 = new Message(11,"map","35.174744,136.909650","u005","g001",new Date());
-		Message message12 = new Message(12,"text","hello hello","u001","g001",new Date());
+		Message message10 = new Message(10,"text","ほげほげ","u003","g001",new Date());
+		Message message11 = new Message(11,"map","35.174744,136.909650","u003","g001",new Date());
+		Message message12 = new Message(12,"text","無事ですか？","u001","g001",new Date());
+		Message message4 = new Message(4,"stamp","1","u001","g001",new Date());
 		messageRepository.save(message1);
 		messageRepository.save(message2);
 		messageRepository.save(message3);
