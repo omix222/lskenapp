@@ -52,8 +52,9 @@ public class CustomMessageRestController {
 
 	// offset、limit対応
 	@GetMapping("/search")
-	List<CustomMessage> getMessages(@RequestParam(name = "offset", defaultValue = "0") Integer offset, 
-			@RequestHeader(name = "Authorization") String token, 
+	List<CustomMessage> getMessages(
+			@RequestHeader(name = "Authorization") String token,
+			@RequestParam(name = "offset", defaultValue = "") String offset,  
 			@RequestParam(name = "limit", defaultValue = "100") Integer limit,
 			@RequestParam(name = "sort", defaultValue = "+") String sort) {
 		// offset、limit を指定して

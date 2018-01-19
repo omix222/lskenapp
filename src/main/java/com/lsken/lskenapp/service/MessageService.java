@@ -44,11 +44,25 @@ public class MessageService {
 	 * @param messageid
 	 * @return
 	 */
-	public List<CustomMessage> findItems(Integer offset, Integer limit, String sort) {
+	public List<CustomMessage> findItems(String offset, Integer limit, String sort) {
 		List<CustomMessage> list = new ArrayList<>();
 		
-		// 指定IDを基準に一覧を取得
-		list = customuMessageRepository.findLatestLimit(offset, limit, sort.equals("-") ? 1 : 0);
+		// ソート順
+		Integer iSort = sort.equals("-") ? 1 : 0;
+		
+		Integer iOffset = 0;
+		if(!offset.equals(""))
+		{
+			try {
+				iOffset = Integer.parseInt(offset);
+		    } catch (NumberFormatException e) {
+		    }
+			// offset基準
+			list = customuMessageRepository.findLatestLimit(iOffset, limit, iSort);
+		}  else {
+			// 最新を取得
+			list = customuMessageRepository.findLatestLimit(limit, iSort);
+		}
 		
 		return list;
 	}
