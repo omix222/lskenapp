@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 @Controller
@@ -39,11 +40,10 @@ public class MessageListController {
 		        return "likealine";
 		    }
 		  @RequestMapping("/messegepost")
-		    public String likealinePost(Model model) {
-			  
-			  List<CustomMessage> messages = messageService.findAllAndMergeOrderByPostDate();
-		        model.addAttribute("msgs", messages);
-		        model.addAttribute("mesageForm", new Message());
-		        return "likealine";
+		    public String likealinePost(Message form,Model model) {
+			  Message mesage = new Message();
+			  BeanUtils.copyProperties(form, mesage);
+			  messageService.create(mesage);
+		      return "redirect:/messagelistlikealine";
 		    }
 	}

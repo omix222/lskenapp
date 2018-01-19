@@ -8,7 +8,18 @@
   background: #7da4cd;
 
 }
-
+.postmessage {
+  padding: 20px 10px;
+  width: 350px;
+  max-width: 450px;
+  margin: 15px auto;
+  text-align: left;
+  font-size: 14px;
+  display:inline-block;
+}
+.icon {
+	display: inline;
+}
 /*以下、②左側のコメント*/
 .balloon6 {
     width: 100%;
