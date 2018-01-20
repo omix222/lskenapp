@@ -52,7 +52,7 @@ public class LskenappApplication implements CommandLineRunner{
 		Message message9 = new Message(9,"map","35.174744,136.909650","u004","g001",new Date());
 		Message message10 = new Message(10,"text","ほげほげ","u003","g001",new Date());
 		Message message11 = new Message(11,"map","35.174744,136.909650","u003","g001",new Date());
-		Message message12 = new Message(12,"text","無事ですか？","u001","g001",new Date());
+		Message message12 = new Message(12,"text","無事ですか？","u002","g001",new Date());
 		Message message4 = new Message(4,"stamp","1","u001","g001",new Date());
 		messageRepository.save(message1);
 		messageRepository.save(message2);
