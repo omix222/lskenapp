@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) {
-		web.ignoring().antMatchers("/webjars/**","/css/**","/fonts/**","/html/**","/images/**","/js/**","/api/**","/h2-console/**","/stamps","/v2/api-docs.json","/v2/api-docs");
+		web.ignoring().antMatchers("/asset-manifest.json","/index.html","/main.css","/main.29575618.js","/bundle.js","/main.29575618.js.map","/favicon.ico","/manifest.json","/iconfont/**","/img/**","/webjars/**","/css/**","/fonts/**","/html/**","/images/**","/js/**","/api/**","/h2-console/**","/stamps","/v2/api-docs.json","/v2/api-docs");
 	}
 	@Override
 	public void configure(HttpSecurity http) throws Exception {

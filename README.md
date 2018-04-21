@@ -174,4 +174,9 @@ https://qiita.com/sk-welldan/items/30d5092247ce6a7da820
 	* custom: メッセージ取得api1回のみ
 	* customじゃない方：メッセージ取得api1回、username取得20回、スタンプ取得5回
 * 事前仕込みデータ1000メッセージ
-* 想定同時ユーザー100人
+* 想定同時ユーザー50人
+*  jmeter -n -t [jmx file] -l [results file] -e -o [Path to output folder]
+*   ~/oper/apache-jmeter-3.3/bin/jmeter -n -t innerapi.jmx -l interapilog.jtl -e interapiloge.jtl
+*   ~/oper/apache-jmeter-3.3/bin/jmeter -n -t outerapi.jmx -l outerapilog.jtl -e outerapiloge.jtl
+
+
